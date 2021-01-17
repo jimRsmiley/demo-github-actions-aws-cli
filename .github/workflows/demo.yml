@@ -17,12 +17,10 @@ jobs:
         role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
         aws-region: us-east-1
         
-    - name: Copy files to the test website with the AWS CLI
+    - name: Get the caller's identity
       run: |
         aws sts get-caller-identity
 
-    - name: Copy files to the test website with the AWS CLI
+    - name: Describe the ec2 instances
       run: |
         aws ec2 describe-instances | cat
-
-    
