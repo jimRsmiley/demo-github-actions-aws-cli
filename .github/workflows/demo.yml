@@ -19,3 +19,9 @@ jobs:
     - name: Copy files to the test website with the AWS CLI
       run: |
         aws sts get-caller-identity
+
+    - name: Copy files to the test website with the AWS CLI
+      run: |
+        aws ec2 describe-instances | cat
+
+    
